@@ -1,0 +1,12 @@
+<div>
+    <h1 class="wow pulse"  data-wow-iteration="infinite" id="h1">My Flash Card</h1>
+    <hr>
+    <ol>
+        <div *ngFor='let card of cards;let i = index'>
+            <li>{{card.name}}</li>
+            <button id="button" class="slide" (click)='toggleDetails(i)'>&nbsp;</button>
+            <app-card-detail *ngIf='card.showDescription' [card]='card' (isComplete) = 'completeCard($event,i)'></app-card-detail>
+        </div>
+    </ol>
+</div>
+
